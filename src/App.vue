@@ -13,12 +13,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <main>
     <section>
       <nav>
-      <RouterLink to="/">Homepage</RouterLink>
-      <RouterLink to="/add-task">Add task</RouterLink>
-      <RouterLink to="/tasks-list">Tasks List</RouterLink>
+      <router-link class="router-link" to="/">Homepage</router-link>
+      <router-link class="router-link" to="/add-task">Add task</router-link>
+      <router-link class="router-link" to="/tasks-list">Tasks List</router-link>
     </nav>
     </section>
-   
     <RouterView />
     <!-- <addTask /> 
     <TasksList />
@@ -30,8 +29,28 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 
-.nav {
-
+section {
+    width: 530px;
+    background: #12624b;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: center;
 }
+
+nav {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.router-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.router-link:hover {
+  color: #ff4a9f;
+}
+
     
 </style>
