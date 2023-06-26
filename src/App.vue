@@ -6,7 +6,6 @@ import './main.css';
 
 import { RouterLink, RouterView } from 'vue-router'
 
-
 </script>
 
 <template>
@@ -19,12 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </nav>
     </header>
     <RouterView />
-    <!-- <addTask /> 
-    <TasksList />
-    <HomePage /> -->
   </main>
-
-
 </template>
 
 <style>
@@ -35,6 +29,7 @@ header {
     padding: 18px 22px;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 }
 
 nav {
