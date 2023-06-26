@@ -1,5 +1,17 @@
 <template>
-      <h1>Tasks List</h1>
+    <section>
+        <h1>Your tasks to do: </h1>
+
+        <ul>
+            <li
+            v-for="task in tasksList" :key="task.id"            
+            >
+            {{ task.task }}
+            </li>
+        </ul>
+
+    </section>
+     
 
 </template>
 
@@ -7,7 +19,10 @@
 export default {
     name: "Tasks List",
     data() {
-        return {}
-    }
+        return {
+            tasks: this.$store.state.tasksList
+        }
+    },
+    
 }
 </script>
