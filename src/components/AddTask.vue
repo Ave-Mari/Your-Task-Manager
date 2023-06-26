@@ -26,3 +26,37 @@ export default {
 }
 </script>
 
+<style>
+    section {
+        display: flex;
+        justify-content: center;
+        padding-top: 33px;
+    }
+
+    input {
+        width: 209px;
+        padding: 9px 10px 9px 11px;
+        margin-right: 9px;
+        border-radius: 10px;
+    }
+    
+    button {
+        color: #fff;
+        background: #ff4a9f;
+        border: none;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #d1357e;
+    }
+
+    button:disabled {
+        background: #a96c88;
+        cursor: not-allowed;
+    }
+</style>
+
