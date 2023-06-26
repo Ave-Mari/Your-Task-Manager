@@ -1,27 +1,37 @@
 <script setup>
 import addTask from './components/AddTask.vue'
-import TasksList from './components/AddTask.vue'
+import TasksList from './components/TasksList.vue'
+import HomePage from './components/HomePage.vue'
+import './main.css';
+
+import { RouterLink, RouterView } from 'vue-router'
 
 
 </script>
 
 <template>
   <main>
-    <addTask /> 
+    <section>
+      <nav>
+      <RouterLink to="/">Homepage</RouterLink>
+      <RouterLink to="/add-task">Add task</RouterLink>
+      <RouterLink to="/tasks-list">Tasks List</RouterLink>
+    </nav>
+    </section>
+   
+    <RouterView />
+    <!-- <addTask /> 
     <TasksList />
+    <HomePage /> -->
   </main>
 
 
 </template>
 
 <style>
-    main {
-      margin: 0;
-          background: rgb(145,47,211);
-          background: linear-gradient(90deg, rgba(145,47,211,1) 0%, rgba(29,253,171,1) 50%, rgba(1,21,192,1) 100%); 
-    }
 
-    h1 {
-      margin: 0;
-    }
+.nav {
+
+}
+    
 </style>
