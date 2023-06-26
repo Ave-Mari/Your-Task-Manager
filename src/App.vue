@@ -11,13 +11,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <main>
-    <section>
+    <header>
       <nav>
       <router-link class="router-link" to="/">Homepage</router-link>
       <router-link class="router-link" to="/add-task">Add task</router-link>
       <router-link class="router-link" to="/tasks-list">Tasks List</router-link>
     </nav>
-    </section>
+    </header>
     <RouterView />
     <!-- <addTask /> 
     <TasksList />
@@ -29,7 +29,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 
-section {
+header {
     width: 530px;
     background: #12624b;
     padding: 18px 22px;
