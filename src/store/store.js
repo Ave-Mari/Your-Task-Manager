@@ -6,6 +6,13 @@ const store = createStore({
             tasksList: []
         }
     },
+    getters: {
+        thisTask: (state) => (taskId) => {
+            return state.tasksList.find((task) => task.id === taskId)
+        },
+
+
+    },
     mutations: {
         addTask: (state, task) => {
             state.tasksList.push({
@@ -13,6 +20,10 @@ const store = createStore({
                 task: task,
                 completed: false
             })
+        },
+        deleteTask: (state, taskId) => {
+            let taskIndex = state.tasksList.indexOf(store.getters.thisTask(taskId));
+            state.tasksList.splice(taskIndex, 1);
         }
     }
 
