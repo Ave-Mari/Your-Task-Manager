@@ -1,7 +1,7 @@
 <template>
-    <section>
+    <section class="add-task">
         <input type="text" v-model="task" placeholder="Type your task here">
-        <button v-if="task != ''" @click="addTaskToList(newTask)">Add task</button>
+        <button v-if="task != ''" @click="addTaskToList(task)">Add task</button>
         <button disabled v-else>Add task</button>
     </section>
   
@@ -17,8 +17,8 @@ export default {
         }
     },
     methods: {
-        addTaskToList(newTask) {
-            this.$store.commit("addTask", newTask);
+        addTaskToList(task) {
+            this.$store.commit("addTask", task);
             this.task = '';
 
         }
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-    section {
+    .add-task {
         display: flex;
         justify-content: center;
         padding-top: 33px;
