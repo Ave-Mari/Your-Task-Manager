@@ -4,8 +4,6 @@
         <button v-if="task != ''" @click="addTaskToList(task)">Add task</button>
         <button disabled v-else>Add task</button>
     </section>
-  
-
 </template>
 
 <script>
