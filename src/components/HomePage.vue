@@ -1,7 +1,6 @@
 <template>
     <section class="homepage">
-        <h1>Homepage</h1>
-        <p>Welcome to your personal task manager where you can <router-link class="homepage-link" to="/add-task">create</router-link> task and add it to <router-link class="homepage-link" to="/tasks-list">list</router-link></p>
+        <p>Welcome to your personal task manager where you can <router-link class="homepage-link" to="/add-task">create task</router-link> and add it to <router-link class="homepage-link" to="/tasks-list">list</router-link></p>
       </section>
    
 </template>
@@ -16,7 +15,6 @@ export default {
 </script>
 
 <style>
-
     .homepage-link {
         color: rgb(165, 12, 81);
     }
@@ -24,9 +22,10 @@ export default {
     .homepage {
         background: #fff;
         margin-top: 12px;
-        padding-top: 10px;
-        padding-bottom: 17px;
-        border: 33px;
+        padding: 10px 16px;
+        border-radius: 33px;
+        width: 439px;
+        margin: 12px auto 0 auto;
     }
 
     p {
