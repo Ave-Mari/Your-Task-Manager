@@ -15,6 +15,7 @@
             type="text"
             class="edit-task"
             v-model="task.task"
+            placeholder="Edit your task"
             v-else
             >
             <button @click="editTask(task)" class="edit-btn">
@@ -88,10 +89,11 @@ export default {
         justify-content: space-between;
         padding-left: 13px;
         align-items: center;
+        padding: 11px 9px;
     }
 
     span {
-        width: 58%;
+        width: 56%;
         list-style: none;
         font-weight: 300;
         font-size: 19px;
@@ -104,9 +106,14 @@ export default {
     .edit-task {
         border: none;
         border-radius: 0;
-        border-bottom: 1px solid #000;
-        padding-top: 0px;
-        padding-bottom: 2px;
+        border-bottom: 1px solid #000;        
+        width: 47%;
+    }
+
+    .edit-task[placeholder] {
+        font-weight: 300;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
     }
     .edit-btn {
         padding: 8px 12px;
