@@ -6,7 +6,20 @@
             v-for="task in tasksList" 
             :key="task.id"            
             >
-            <span>{{ task.task }}</span>
+            <span
+            v-if="!task.editing"
+            >
+            {{ task.task }}
+            </span>
+            <input
+            type="text"
+            class="edit-task"
+            v-model="task.task"
+            v-else
+            >
+            <button @click="editTask(task)" class="edit-btn">
+                {{ task.editing ? "Save Task" : "Edit task" }}               
+            </button>
             <button @click="deleteTask(task)" class="delete-btn">Delete task</button>
             
             </li>
@@ -28,6 +41,19 @@ export default {
     methods: {
         deleteTask(task) {
             this.$store.commit("deleteTask", task.id)
+        },
+        editTask(task) {
+            if (task.editing) {
+                this.saveTask(task)
+            } else {
+                task.editing = true;
+                task.task = task.task
+            }
+        },
+        saveTask(task) {
+            task.task = task.task;
+            task.editing = false;
+            this.$store.commit("updateTask", task)
         }
     }
 }
@@ -65,6 +91,7 @@ export default {
     }
 
     span {
+        width: 58%;
         list-style: none;
         font-weight: 300;
         font-size: 19px;
@@ -73,5 +100,20 @@ export default {
     .delete-btn {
         padding: 8px 12px;
         border-radius: 12px;
+    }
+    .edit-task {
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #000;
+        padding-top: 0px;
+        padding-bottom: 2px;
+    }
+    .edit-btn {
+        padding: 8px 12px;
+        border-radius: 12px;
+        background-color: rgb(76, 86, 201);
+    }
+    .edit-btn:hover {
+        background-color: rgb(50, 58, 147);
     }
 </style>
