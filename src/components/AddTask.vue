@@ -1,6 +1,6 @@
 <template>
     <section class="add-task">
-        <input type="text" v-model="task" placeholder="Type your task here">
+        <input type="text" v-model="task" @keydown.enter="addTaskToList(task)" placeholder="Type your task here">
         <button v-if="task != ''" @click="addTaskToList(task)">Add task</button>
         <button disabled v-else>Add task</button>
     </section>
@@ -18,7 +18,6 @@ export default {
         addTaskToList(task) {
             this.$store.commit("addTask", task);
             this.task = '';
-
         }
     }
 }
