@@ -18,11 +18,15 @@ export default {
 <style>
 
     .homepage-link {
-        
+        color: rgb(165, 12, 81);
     }
 
     .homepage {
         background: #fff;
+        margin-top: 12px;
+        padding-top: 10px;
+        padding-bottom: 17px;
+        border: 33px;
     }
 
     p {
